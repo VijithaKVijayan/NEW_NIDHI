@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>SAFE AND STRONG | DETAILS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="static/view/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">CUSTOMER DETAILS</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+                           {% for result in data %}
+        <tr><td><b>CUSTMOER NAME</b></td><td>{{ result.Customer_name }}</td></tr>
+        <tr><td><b>CANVASSED BY</b></td><td>{{ result.Canvassed_by }}</td></tr>
+        <tr><td><b>PANCARD</b></td><td>{{ result.Pancard_no }}</td></tr><tr><td><b></b></td><td> <img src="{{ result.photo.url }}" width="200px"></td></tr>
+        <tr><td><b>DOB</b></td><td>{{ result.Date_of_Birth }}</td></tr>
+        <tr><td><b>ADHAR CARD</b></td><td>{{ result.Adarcard_no }}</td></tr>
+        <tr><td><b>MOBILE No</b></td><td>{{ result.Mobile_no }}</td></tr>
+        <tr><td><b>ALTERNATE MOBILE No</b></td><td>{{ result.Mobile_number1 }}</td></tr>
+        <tr><td><b>EMAIL</b></td><td>{{ result.Email }}</td></tr>
+        <tr><td><b>OCCUPATION</b></td><td>{{ result.Occupation }}</td></tr>
+        <tr><td><b>ANNUAL INCOME</b></td><td>{{ result.Annual_income }}</td></tr>
+        <tr><td><b>ADDRESS</b></td><td>{{ result.Address }}</td></tr>
+        <tr><td><b>NOMINEE NAME</b></td><td>{{ result.Nominee_name }}</td></tr>
+        <tr><td><b>NOMINEE RELATION</b></td><td>{{ result.Nominee_relation }}</td></tr>
+        <tr><td><b>CUSTOMER_STATUS</b></td><td>{{ result.Customer_status }}</td></tr>
+        <tr><td><b>Customer Plan</b></td><td>{{ result.Customer_Plan }}</td></tr>
+        <tr><td><b>Total Amount</b></td><td>{{ result.Total_Amount }}</td></tr>
+        <tr><td><b>Deposit Year</b></td><td>{{ result.Deposit_Year }}</td></tr>
+        <tr><td><b>Anual Stypend</b></td><td>{{ result.Anuval_stypend }}</td></tr>
+
+
+    {% endfor %}
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/view/js/jquery.min.js"></script>
+  <script src="static/view/js/popper.js"></script>
+  <script src="static/view/js/bootstrap.min.js"></script>
+  <script src="static/view/js/main.js"></script>
+
+	</body>
+</html>
+

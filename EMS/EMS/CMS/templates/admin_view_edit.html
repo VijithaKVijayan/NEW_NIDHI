@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+{#    {% load staticfiles %}#}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+
+
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #10c07f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #95bd97;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 8px 0;
+}
+
+tr:nth-child(even) {
+  background-color: #d8e7dc;
+}
+
+tr:nth-child(odd)
+{background-color: #d0e0d9 ;
+}
+
+th
+{background-color: #a7b0b8  ;
+
+}
+
+registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+</head>
+<body>
+<form method="POST" class="post-form" action="/adminupdate/{{ employee.id }}">
+        {% csrf_token %}
+<center>
+    <div class="container">
+
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4"><center>
+        <h3>Update Details</h3></center>
+    </div>
+  </div>
+
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Customer Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Customer_name" id="id_Customer_name" required maxlength="200" value="{{ employee.Customer_name }}" readonly />
+    </div>
+  </div>
+        <br>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Canvassed by:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Canvassed_by" id="id_Canvassed_by" required maxlength="120" value="{{ employee.Canvassed_by }}" readonly />
+    </div>
+  </div>
+<br>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Customer Plan:</label>
+    <div class="col-sm-4">
+        <input type="text" class="col-sm-12 col-form-label" name="Customer_Plan" id="id_Customer_Plan" required maxlength="200" value="{{ employee.Customer_Plan }}" readonly />
+    </div>
+        </div>
+<br>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Deposit Year:</label>
+    <div class="col-sm-4">
+        <input type="number" class="col-sm-12 col-form-label" name="Deposit_Year" id="id_Deposit_Year"  value="{{ employee.Deposit_Year }}" readonly />
+    </div>
+  </div>
+        <br>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Deposit Amount:</label>
+    <div class="col-sm-4">
+        <input type="number" class="col-sm-12 col-form-label" name="Deposit_Amount" id="id_Deposit_Amount" value="{{ employee.Deposit_Amount }}" readonly />
+    </div>
+  </div>
+        <br>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Anuvalstypend:</label>
+    <div class="col-sm-4">
+        <input type="number" class="col-sm-12 col-form-label" name="Anuval_stypend" id="id_Anuval_stypend"  value="{{ employee.Anuval_stypend }}" />
+    </div>
+  </div>
+{#    <div class="form-group row">#}
+{#    <label class="col-sm-2 col-form-label">Status</label>#}
+{#    <div class="col-sm-4">#}
+{##}
+{#  <select name="Status" id="id_Status">#}
+{#    <option value="first level verification completed">first level verification completed</option>#}
+{#    <option value="second level verification completed">second level verification completed</option>#}
+{#    <option value="third level verification completed">third level verification completed </option>#}
+{#  </select>#}
+{#    </div>#}
+{#    </div>#}
+
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+        <center>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+     <button type="submit" class="btn btn-success">Update</button>
+        </center>
+    </div>
+  </div>
+    </div>
+</center>
+    <input type="hidden" name="Username" id="Username" value="{{ employee.Username }}">
+    <input type="hidden" name="Password" id="Password" value="{{ employee.Password }}">
+    <input type="hidden" name="photo" id="photo" value="{{ employee.photo }}">
+    <input type="hidden" name="Signature" id="Signature" value="{{ employee.Signature }}">
+    <input type="hidden" name="Pancard_no" id="Pancard_no" value="{{ employee.Pancard_no }}">
+    <input type="hidden" name="Adarcard_no" id="Adarcard_no" value="{{ employee.Adarcard_no }}">
+    <input type="hidden" name="Date_of_Birth" id="Date_of_Birth" value="{{ employee.Date_of_Birth }}">
+    <input type="hidden" name="Mobile_no" id=" Mobile_no" value="{{ employee.Mobile_no }}">
+    <input type="hidden" name="Mobile_number1" id="Mobile_number1" value="{{ employee.Mobile_number1 }}">
+    <input type="hidden" name="Email" id="Email" value="{{ employee.Email }}">
+    <input type="hidden" name="Occupation" id="Occupation" value="{{ employee.Occupation }}">
+    <input type="hidden" name="Annual_income" id="Annual_income" value="{{ employee.Annual_income }}">
+    <input type="hidden" name="Address" id="Address" value="{{ employee.Address }}">
+    <input type="hidden" name="Nominee_name" id="Nominee_name" value="{{ employee.Nominee_name }}">
+    <input type="hidden" name="Nominee_relation" id="Nominee_relation" value="{{ employee.Nominee_relation }}">
+    <input type="hidden" name="Customer_status" id="Customer_status" value="{{ employee.Customer_status }}">
+{#  <input type="hidden" name="Status" id="Status" value="{{ employee.Status }}">#}
+
+</form>
+</body>
+</html>

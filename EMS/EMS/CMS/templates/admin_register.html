@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index_AMS_SSBC</title>
+</head>
+<body>
+
+        <form action="adminregister" method="POST">
+            {% csrf_token %}
+            <input type="text" id="Username" name="Username" placeholder="Username">
+            <input type="Password" id="Password" name="Password" placeholder="Password">
+            <input type="submit">
+        </form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+{#    {% load staticfiles %}#}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{ employee.id }}">
+        {% csrf_token %}
+
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Customer Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Customer_name" id="id_Customer_name" required maxlength="200" value="{{ employee.Customer_name }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Canvassed by:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Canvassed_by" id="id_Canvassed_by" required maxlength="120" value="{{ employee.Canvassed_by }}" />
+    </div>
+  </div>
+
+    <label class="col-sm-2 col-form-label">Customer Plan:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Customer_Plan" id="id_Customer_Plan" required maxlength="200" value="{{ employee.Customer_Plan }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Deposit Year:</label>
+    <div class="col-sm-4">
+        <input type="number" name="Deposit_Year" id="id_Deposit_Year"  value="{{ employee.Deposit_Year }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Deposit Amount:</label>
+    <div class="col-sm-4">
+        <input type="number" name="Deposit_Amount" id="id_Deposit_Amount" value="{{ employee.Deposit_Amount }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Anuvalstypend:</label>
+    <div class="col-sm-4">
+        <input type="number" name="Anuval_stypend" id="id_Anuval_stypend"  value="{{ employee.Anuval_stypend }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+     <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+    <input type="hidden" name="Username" id="Username" value="{{ employee.Username }}">
+    <input type="hidden" name="Password" id="Password" value="{{ employee.Password }}">
+    <input type="hidden" name="photo" id="photo" value="{{ employee.photo }}">
+    <input type="hidden" name="Signature" id="Signature" value="{{ employee.Signature }}">
+    <input type="hidden" name="Pancard_no" id="Pancard_no" value="{{ employee.Pancard_no }}">
+    <input type="hidden" name="Adarcard_no" id="Adarcard_no" value="{{ employee.Adarcard_no }}">
+    <input type="hidden" name="Date_of_Birth" id="Date_of_Birth" value="{{ employee.Date_of_Birth }}">
+    <input type="hidden" name="Mobile_no" id=" Mobile_no" value="{{ employee.Mobile_no }}">
+    <input type="hidden" name="Mobile_number1" id="Mobile_number1" value="{{ employee.Mobile_number1 }}">
+    <input type="hidden" name="Email" id="Email" value="{{ employee.Email }}">
+    <input type="hidden" name="Occupation" id="Occupation" value="{{ employee.Occupation }}">
+    <input type="hidden" name="Annual_income" id="Annual_income" value="{{ employee.Annual_income }}">
+    <input type="hidden" name="Address" id="Address" value="{{ employee.Address }}">
+    <input type="hidden" name="Nominee_name" id="Nominee_name" value="{{ employee.Nominee_name }}">
+    <input type="hidden" name="Nominee_relation" id="Nominee_relation" value="{{ employee.Nominee_relation }}">
+    <input type="hidden" name="Customer_status" id="Customer_status" value="{{ employee.Customer_status }}">
+
+</form>
+</body>
+</html>
